@@ -6,6 +6,11 @@
     var c = document.getElementById("gameCanvas");
     var ctx = c.getContext("2d");
     var clickable;
+    c.onmousdown = function clicky () {
+     if (clickable == 1) {
+      startGame();
+     }
+    }
     function init() {
      clickable = 1;
      c.width = 800;
@@ -20,7 +25,7 @@
     }
     function startGame () {
      clickable = 0;
-     setInterval(
+     setInterval(runGame, 20);
     }
     function runGame () {
      ctx.fillStyle = "#666";
