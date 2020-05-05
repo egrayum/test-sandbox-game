@@ -7,6 +7,7 @@
     var ctx = c.getContext("2d");
     var clickable;
     var fY = 400;
+    var fire;
     c.onclick = function clickstart () {
      if (clickable == 1) {
       startGame();
@@ -14,14 +15,9 @@
     }
     document.addEventListener("keydown", function(event) {
      if (event.keyCode ==  16) {
-      window.setInterval(fire, 20); 
+      fire = 1;
      }
     })
-    function fire () {
-     fY -= 4;
-     ctx.fillStyle = "#111";
-     ctx.fillRect(390, fY, 20, 40);
-    }
     function init() {
      clickable = 1;
      c.width = 800;
@@ -43,10 +39,19 @@
      ctx.fillRect(0, 0, c.width, c.height); 
      ctx.fillStyle = "#111";
      ctx.fillRect(370, 400, 60, 30);
+     if (fire == 1) {
+      fY -= 3;
+      ctx.fillStyle = "#111";
+      ctx.fillRect(390, fY, 20, 40);
+     }
+     if (fY < 0) {
+      fire = 0;
+      fY = 400;
+     }
     }
    </script>
   </div>
  </head>
  <body onload="init()">
  </body>
-</html>
+</html> 
