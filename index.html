@@ -6,11 +6,21 @@
     var c = document.getElementById("gameCanvas");
     var ctx = c.getContext("2d");
     var clickable;
-    c.onclick = function clicky () {
+    var fY = 400;
+    c.onclick = function clickstart () {
      if (clickable == 1) {
-      alert("hello, is this thing on?");
       startGame();
      }
+    }
+    document.addEventListener("keydown", function(event) {
+     if (event.keyCode ==  16) {
+      window.setInterval(fire, 20); 
+     }
+    })
+    function fire () {
+     fY -= 4;
+     ctx.fillStyle = "#111";
+     ctx.fillRect(390, fY, 20, 40);
     }
     function init() {
      clickable = 1;
