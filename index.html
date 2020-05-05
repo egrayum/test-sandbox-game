@@ -5,7 +5,9 @@
    <script>
     var c = document.getElementById("gameCanvas");
     var ctx = c.getContext("2d");
+    var clickable;
     function init() {
+     clickable = 1;
      c.width = 800;
      c.height = 600;
      ctx.fillStyle = "#666";
@@ -15,6 +17,16 @@
      ctx.fillText("Space Invaders", 200, 120);
      ctx.font = "25px Arial";
      ctx.fillText("Click to play", 320, 330);
+    }
+    function startGame () {
+     clickable = 0;
+     setInterval(
+    }
+    function runGame () {
+     ctx.fillStyle = "#666";
+     ctx.fillRect(0, 0, c.width, c.height); 
+     ctx.fillStyle = "#111";
+     ctx.fillRect(370, 400, 60, 30);
     }
    </script>
   </div>
