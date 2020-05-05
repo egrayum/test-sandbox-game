@@ -6,7 +6,7 @@
     var c = document.getElementById("gameCanvas");
     var ctx = c.getContext("2d");
     var clickable;
-    c.onmousdown = function clicky () {
+    c.onclick = function clicky () {
      if (clickable == 1) {
       alert("hello, is this thing on?");
       startGame();
