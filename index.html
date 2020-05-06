@@ -10,6 +10,7 @@
     var fire;
     var pX = 330;
     var direction;
+    var bX;
     c.onclick = function clickstart () {
      if (clickable == 1) {
       startGame();
@@ -18,12 +19,17 @@
     document.addEventListener("keydown", function(event) {
      if (event.keyCode ==  16) {
       fire = 1;
+      bX = pX;
      }
-     if (event.keyCode == 37) {
+     if (event.keyCode == 37 && pX - 5 > -1) {
       direction = 1;
-     }
-     if (event.keyCode == 39) {
+     } else if (event.keyCode == 39 && pX + 5 < 801) {
       direction = 2;
+     }
+    })
+    document.addEventListener("keydown", function(event) {
+     if (event.keyCode == 37 || event.keyCode == 39) {
+      direction = 0;
      }
     })
     function init() {
@@ -51,7 +57,7 @@
      if (fire == 1) {
       fY -= 3;
       ctx.fillStyle = "#111";
-      ctx.fillRect(390, fY, 20, 40);
+      ctx.fillRect(bX, fY, 20, 40);
      }
      if (fY < 0) {
       fire = 0;
