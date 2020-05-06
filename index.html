@@ -10,7 +10,7 @@
     var fire;
     var pX = 330;
     var direction;
-    var bX;
+    var b = [];
     c.onclick = function clickstart () {
      if (clickable == 1) {
       startGame();
@@ -19,7 +19,7 @@
     document.addEventListener("keydown", function(event) {
      if (event.keyCode ==  16) {
       fire = 1;
-      bX = pX;
+      b.push[pX];
      }
      if (event.keyCode == 37 && pX - 5 > -1) {
       direction = 1;
@@ -55,9 +55,9 @@
      player.src = "https://raw.githubusercontent.com/egrayum/space-invaders/master/70963D73-DA2D-4ED3-85B9-50F1BBDA0837.png";
      ctx.drawImage(player, pX, 400, 128, 128);
      if (fire == 1) {
-      fY -= 3;
-      ctx.fillStyle = "#111";
-      ctx.fillRect(bX, fY, 20, 40);
+      cY -= 4;
+      fillStyle = "#111";
+      new fillrect(b, fY, 15, 30);
      }
      if (fY < 0) {
       fire = 0;
