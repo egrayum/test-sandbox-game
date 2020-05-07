@@ -6,15 +6,16 @@
     var c = document.getElementById("gameCanvas");
     var ctx = c.getContext("2d");
     var clickable;
-    var fY = 400;
+    var fY = [];
     var fire;
     var pX = 330;
     var direction;
+    var i;
     function shoot () {
+     fY.push(400);
      var bullet = new Image();
      bullet.src = "https://raw.githubusercontent.com/egrayum/space-invaders/master/432577B9-CE5B-45CC-BA23-C9996D240F89.png";
-     ctx.drawImage(bullet, pX, fY, 10, 20)
-     fY -= 1;
+     ctx.drawImage(bullet, pX, fY[fY.length - 1], 10, 20)
     }
     c.onclick = function clickstart () {
      if (clickable == 1) {
@@ -59,6 +60,9 @@
      player.src = "https://raw.githubusercontent.com/egrayum/space-invaders/master/70963D73-DA2D-4ED3-85B9-50F1BBDA0837.png";
      ctx.drawImage(player, pX, 400, 128, 128);
      new shoot();
+     for (i = 0; i < fY.length; i++) {
+      fY[i] += 2;
+     }
      if (fY < 0) {
       fire = 0;
       fY = 400;
