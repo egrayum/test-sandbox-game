@@ -23,7 +23,7 @@
     }
     document.addEventListener("keydown", function(event) {
      if (event.keyCode ==  16) {
-      new shoot();
+      fire == 1;
      }
      if (event.keyCode == 37 && pX - 5 > -1) {
       direction = 1;
@@ -58,6 +58,9 @@
      var player = new Image();
      player.src = "https://raw.githubusercontent.com/egrayum/space-invaders/master/70963D73-DA2D-4ED3-85B9-50F1BBDA0837.png";
      ctx.drawImage(player, pX, 400, 128, 128);
+     if (fire == 1) {
+      new shoot();
+     }
      if (fY < 0) {
       fire = 0;
       fY = 400;
