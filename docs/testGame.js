@@ -17,7 +17,7 @@ function sq(X, Y, Length, Color) {
  ctx.fillRect(X, Y, Length, Length);
 }
 function drawWorld() {
-  for (y = randY[Math.floor(Math.random() * Math.floor(randY.length)); y < 400; y += 50) {
+  for (y = 100; y < 400; y += 50) {
    new sq(x, y, 50, "#000");
   }
  }
