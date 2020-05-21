@@ -8,7 +8,7 @@ var randY = [100, 150, 200];
 function init() {
  c.width = 800;
  c.height = 600;
- ctx.fillStyle = "#05aofb";
+ ctx.fillStyle = "#05a0fb";
  ctx.fillRect(0, 0, c.width, c.height);
  drawWorld();
 }
