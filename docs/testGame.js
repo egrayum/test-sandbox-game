@@ -19,7 +19,7 @@ function sq(X, Y, Length, Color) {
 function drawWorld() {
  for (x = 50; x < 750; x += 50) {
   for (y = randY[Math.floor(Math.random() * Math.floor(randY.length))]; y < 500; y += 50) {
-   new sq(x, y, 50, "#000");
+   new sq(x, y, 50, "#7c4f27");
   }  
  }
 }
