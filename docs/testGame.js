@@ -59,6 +59,6 @@ function drawWorld() {
   drawingX = world[i][0];
   drawingY = world[i][1];
   drawingColor = world[i][2];
-  new block(drawingX + moveDist, drawingY + moveDist, 50, drawingColor);
+  new block(drawingX, drawingY + moveDist, 50, drawingColor);
  }
 }
