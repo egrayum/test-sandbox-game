@@ -22,7 +22,7 @@ var pYVel = 0;
 var pXVel = 0;
 function collision() {
  if (pX + 50 > drawingX && pX < drawingX + 50 && drawingY + 50 > pY && drawingY < pY + 50) {
-  if (pYVel > 0) {
+  if (pYVel > 0.001) {
    pYVel = 0;
   }
  } else {
