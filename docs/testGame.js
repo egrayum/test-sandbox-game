@@ -15,6 +15,24 @@ var drawingColor;
 var moveDistX = 0;
 var depth;
 var stoneOrDirt;
+var pX = 375;
+var pY = 100;
+var pLength = 50;
+var pYVel = -2;
+var pXVel = 0;
+function collision(r1, r2) {
+ if (r1.x + r1.w > drawingX && r1.x < drawingX + 50 && drawingY + 50 > r1.y && drawingY < r1.y + r1.h) {
+  if (pYVel < 0) {
+   pYVel = 0;
+  }
+ } else {
+  
+ }
+}
+function player() {
+ ctx.fillStyle = "#000";
+ ctx.fillRect(pX, pY, pLength, pLength);
+}
 function init() {
  c.width = 800;
  c.height = 600;
@@ -77,5 +95,9 @@ function drawWorld() {
   drawingY = world[i][1] + moveDistY;
   drawingColor = world[i][2];
   new block(drawingX, drawingY, 50, drawingColor);
+  collision(player);
  }
+ pX += pXVel;
+ pY += pYVel;
+ player();
 }
