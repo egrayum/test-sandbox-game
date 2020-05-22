@@ -26,6 +26,9 @@ function collision() {
    pYVel = 0;
   }
  } else {
+  if (pY > 300) {
+   pYVel = 0;
+  }
   pYVel += 0.0005;
  }
 }
@@ -91,8 +94,8 @@ function drawWorld() {
   }
  })
  for (i = 0; i < world.length; i++) {
-  drawingX = world[i][0] + moveDistX;
-  drawingY = world[i][1] + moveDistY;
+  drawingX = world[i][0] + pX;
+  drawingY = world[i][1] + pY;
   drawingColor = world[i][2];
   new block(drawingX, drawingY, 50, drawingColor);
   collision();
