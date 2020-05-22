@@ -44,7 +44,6 @@ function drawWorld() {
  document.addEventListener("keydown", function(event) {
   if (event.keyCode == 38) {
    moveDist = 5;  
-   alert(moveDist);
   } else if (event.keyCode == 40) {
    moveDist = -5; 
   }
