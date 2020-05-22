@@ -20,8 +20,8 @@ var pY = 100;
 var pLength = 50;
 var pYVel = 2;
 var pXVel = 0;
-function collision(r1, r2) {
- if (r1.x + r1.w > drawingX && r1.x < drawingX + 50 && drawingY + 50 > r1.y && drawingY < r1.y + r1.h) {
+function collision() {
+ if (pX + 50 > drawingX && pX < drawingX + 50 && drawingY + 50 > pY && drawingY < pY + 50) {
   if (pYVel > 0) {
    pYVel = 0;
   }
@@ -95,7 +95,7 @@ function drawWorld() {
   drawingY = world[i][1] + moveDistY;
   drawingColor = world[i][2];
   new block(drawingX, drawingY, 50, drawingColor);
-  collision(player);
+  collision();
  }
  pX += pXVel;
  pY += pYVel;
