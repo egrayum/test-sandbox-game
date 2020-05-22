@@ -43,9 +43,9 @@ function drawWorld() {
  ctx.fillRect(0, 0, c.width, c.height);
  document.addEventListener("keydown", function(event) {
   if (event.keyCode == 38) {
-   moveDist = 5;  
+   moveDist = 50;  
   } else if (event.keyCode == 40) {
-   moveDist = -5; 
+   moveDist = -50; 
   }
  })
  document.addEventListener("keyup", function(event) {
