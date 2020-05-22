@@ -31,10 +31,10 @@ function makeWorld() {
   y = prevDepth + ((Math.floor(Math.random() * Math.floor(3)) - 1) * 50);
   new block(x, y, 50, "#179d06");
   prevDepth = y;
-  world.push[x, y, "#179d06"];
+  world[world.length] = [x, y, "#179d06"];
   for (y = y + 50; y < 600; y += 50) {
    new block(x, y, 50, "#7c4f27");
-   world.push[x, y, "#7c4f27"];
+   world[world.length] = [x, y, "#7c4f27"];
   }  
  }
 }
