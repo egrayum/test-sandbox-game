@@ -39,7 +39,7 @@ function makeWorld() {
   world[world.length] = [x, y, "#179d06"];
   for (y = y + 50; y < 1600; y += 50) {
    depth++;
-   stoneOrDirt = Math.floor(Math.random() * Math.floor(5));
+   stoneOrDirt = Math.floor(Math.random() * Math.floor(depth));
    if (depth < 5) {
     //dirt
     new block(x, y, 50, "#7c4f27");
@@ -62,14 +62,14 @@ function drawWorld() {
  ctx.fillRect(0, 0, c.width, c.height);
  document.addEventListener("keydown", function(event) {
   if (event.keyCode == 38 && moveDistY < 1000) {
-   moveDistY += 0.15;  
+   moveDistY += 0.18;  
   } else if (event.keyCode == 40 && moveDistY > -1000) {
-   moveDistY -= 0.15; 
+   moveDistY -= 0.18; 
   }
   if (event.keyCode == 37 && moveDistX < 1000) {
-   moveDistX += 0.15;
+   moveDistX += 0.18;
   } else if (event.keyCode == 39 && moveDistX > -1000) {
-   moveDistX -= 0.15;
+   moveDistX -= 0.18;
   }
  })
  for (i = 0; i < world.length; i++) {
