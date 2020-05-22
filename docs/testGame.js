@@ -18,7 +18,7 @@ var stoneOrDirt;
 var pX = 375;
 var pY = 100;
 var pLength = 50;
-var pYVel = 2;
+var pYVel = 0;
 var pXVel = 0;
 function collision() {
  if (pX + 50 > drawingX && pX < drawingX + 50 && drawingY + 50 > pY && drawingY < pY + 50) {
@@ -26,7 +26,7 @@ function collision() {
    pYVel = 0;
   }
  } else {
-  
+  pYVel += 0.05;
  }
 }
 function player() {
@@ -80,7 +80,7 @@ function drawWorld() {
  ctx.fillRect(0, 0, c.width, c.height);
  document.addEventListener("keydown", function(event) {
   if (event.keyCode == 38 && moveDistY < 1000) {
-   moveDistY += 0.18;  
+   pYVel = -4;
   } else if (event.keyCode == 40 && moveDistY > -1000) {
    moveDistY -= 0.18; 
   }
