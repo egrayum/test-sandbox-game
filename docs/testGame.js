@@ -44,7 +44,7 @@ function drawWorld() {
  document.addEventListener("keydown", function(event) {
   if (event.keyCode == 38) {
    moveDist = 5;  
-   alert("hello");
+   alert(moveDist);
   } else if (event.keyCode == 40) {
    moveDist = -5; 
   }
@@ -58,8 +58,8 @@ function drawWorld() {
  })
  for (i = 0; i < world.length; i++) {
   drawingX = world[i][0];
-  drawingY = world[i][1];
+  drawingY = world[i][1] + moveDist;
   drawingColor = world[i][2];
-  new block(drawingX, drawingY + moveDist, 50, drawingColor);
+  new block(drawingX, drawingY, 50, drawingColor);
  }
 }
