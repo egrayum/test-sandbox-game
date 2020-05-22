@@ -20,13 +20,14 @@ var pY = 100;
 var pLength = 50;
 var pYVel = 0;
 var pXVel = 0;
-function collision() {
+var surface = [];
+function collision(xx, yy) {
  if (pX + 50 > drawingX && pX < drawingX + 50 && drawingY + 50 > pY && drawingY < pY + 50) {
   if (pYVel > -0.001) {
    pYVel = 0;
   }
  } else {
-  if (pY > 300) {
+  if (pX > xx - 50 && pX < xx + 50 && pY > yy - 50) {
    pYVel = 0;
   }
   pYVel += 0.0005;
@@ -55,6 +56,7 @@ function makeWorld() {
  for (x = -1000; x < 1800; x += 50) {
   depth = 0;
   y = prevDepth + ((Math.floor(Math.random() * Math.floor(3)) - 1) * 50);
+  surface[surface.length] = [x, y];
   new block(x, y, 50, "#179d06");
   prevDepth = y;
   world[world.length] = [x, y, "#179d06"];
@@ -98,7 +100,7 @@ function drawWorld() {
   drawingY = world[i][1] + pY;
   drawingColor = world[i][2];
   new block(drawingX, drawingY, 50, drawingColor);
-  collision();
+  collision(surface[i][0], surface[i][1]);
  }
  pX += pXVel;
  pY += pYVel;
