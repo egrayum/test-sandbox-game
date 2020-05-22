@@ -59,14 +59,14 @@ function drawWorld() {
  ctx.fillStyle = "#05a0fb";
  ctx.fillRect(0, 0, c.width, c.height);
  document.addEventListener("keydown", function(event) {
-  if (event.keyCode == 38 && moveDistY < 1600) {
+  if (event.keyCode == 38 && moveDistY < 1000) {
    moveDistY += 0.15;  
-  } else if (event.keyCode == 40 && moveDistY > -400) {
+  } else if (event.keyCode == 40 && moveDistY > -1600) {
    moveDistY -= 0.15; 
   }
-  if (event.keyCode == 37 && moveDistX < 1800) {
+  if (event.keyCode == 37 && moveDistX < 1000) {
    moveDistX += 0.15;
-  } else if (event.keyCode == 39 && moveDistX > -200) {
+  } else if (event.keyCode == 39 && moveDistX > -1800) {
    moveDistX -= 0.15;
   }
  })
