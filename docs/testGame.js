@@ -45,7 +45,7 @@ function makeWorld() {
     new block(x, y, 50, "#7c4f27");
    }
    if (depth > 4) {
-    if (stoneOrDirt == 0) {
+    if (stoneOrDirt == 1) {
      new block(x, y, 50, "#7c4f27");
     } else {
      new block(x, y, 50, "#4d4d4d"); 
@@ -61,12 +61,12 @@ function drawWorld() {
  document.addEventListener("keydown", function(event) {
   if (event.keyCode == 38 && moveDistY < 1600) {
    moveDistY += 0.15;  
-  } else if (event.keyCode == 40 && moveDistY > -1000) {
+  } else if (event.keyCode == 40 && moveDistY > -400) {
    moveDistY -= 0.15; 
   }
   if (event.keyCode == 37 && moveDistX < 1800) {
    moveDistX += 0.15;
-  } else if (event.keyCode == 39 && moveDistX > -1000) {
+  } else if (event.keyCode == 39 && moveDistX > -200) {
    moveDistX -= 0.15;
   }
  })
