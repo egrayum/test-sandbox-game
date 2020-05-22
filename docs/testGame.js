@@ -26,7 +26,7 @@ function collision() {
    pYVel = 0;
   }
  } else {
-  pYVel += 0.05;
+  pYVel += 0.0005;
  }
 }
 function player() {
