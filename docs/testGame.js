@@ -30,14 +30,14 @@ function collision() {
  }
 }
 // the important stuff
- function platform(gravity, friction, jumpHeight, moveSpeed) {
+ function platform(gravity) {
   pYVel += gravity;
   pY += pYVel;
   if (touchingWorld == true) {
    while (touchingWorld == true) {
     pYVel += (Math.abs(pYVel)/pYVel) * -1;
    }
-   // pYVel = 
+    pYVel = 0;
   }
  }
 function player() {
@@ -111,6 +111,7 @@ function drawWorld() {
   drawingColor = world[i][2];
   new block(drawingX, drawingY, 50, drawingColor);
   collision();
+  platform(-1);
  }
  pX += pXVel;
  pY += pYVel;
