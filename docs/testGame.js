@@ -59,14 +59,13 @@ function makeWorld() {
  for (x = -1000; x < 1800; x += 50) {
   depth = 0;
   // this is for making the terrain go not crazy
-//  if (y < 50) {
-   //y = prevDepth + ((Math.floor(Math.random() * Math.floor(2)) - 1) * 50); 
-//  } else if (y > 300) {
-  // y = prevDepth + ((Math.floor(Math.random() * Math.floor(2))) * 50);
-  //} else {
+ if (y < 50) {
+   y = prevDepth + ((Math.floor(Math.random() * Math.floor(2)) - 1) * 50); 
+ } else if (y > 300) {
+   y = prevDepth + ((Math.floor(Math.random() * Math.floor(2))) * 50);
+ } else {
    y = prevDepth + ((Math.floor(Math.random() * Math.floor(3)) - 1) * 50);
- // }
-  surface[surface.length] = [x, y];
+ }
   new block(x, y, 50, "#179d06");
   prevDepth = y;
   world[world.length] = [x, y, "#179d06"];
