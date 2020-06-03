@@ -24,9 +24,9 @@ var touchingWorld = false;
 // senses if you are touching the world
 function collision() {
  if (pX + 50 > drawingX && pX < drawingX + 50 && drawingY + 50 > pY && drawingY < pY + 50) {
-  touchingWorld = false;
- } else {
   touchingWorld = true;
+ } else {
+  touchingWorld = false;
  }
 }
 // the important stuff
