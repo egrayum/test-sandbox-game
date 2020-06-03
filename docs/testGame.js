@@ -20,19 +20,24 @@ var pY = 100;
 var pLength = 50;
 var pYVel = 0;
 var pXVel = 0;
+var touchingWorld = false;
+// senses if you are touching the world
 function collision() {
  if (pX + 50 > drawingX && pX < drawingX + 50 && drawingY + 50 > pY && drawingY < pY + 50) {
-  if (pYVel > -0.001) {
-   pYVel = -0.095;
-  }
+  touchingWorld = false;
  } else {
-  pYVel += 0.0005;
+  touchingWorld = true;
  }
+}
+// the important stuff
+function platform(gravity, friction, jumpHeight, moveSpeed) {
+ 
 }
 function player() {
  ctx.fillStyle = "#000";
  ctx.fillRect(pX, pY, pLength, pLength);
 }
+// it's the init function. the name says it all.
 function init() {
  c.width = 800;
  c.height = 600;
@@ -41,17 +46,26 @@ function init() {
  makeWorld();
  window.setInterval(drawWorld, 20);
 }
+// for making new blocks
 function block(X, Y, Length, Color) {
  ctx.fillStyle = Color;
  ctx.fillRect(X, Y, Length, Length);
 }
+// makes the random world
 function makeWorld() {
  depth = 0;
  y = randY[Math.floor(Math.random() * Math.floor(randY.length))];
  prevDepth = y;
  for (x = -1000; x < 1800; x += 50) {
   depth = 0;
-  y = prevDepth + ((Math.floor(Math.random() * Math.floor(3)) - 1) * 50);
+  // this is for making the terrain go not crazy
+  if (y < 50) {
+   y = prevDepth + ((Math.floor(Math.random() * Math.floor(2)) - 1) * 50); 
+  } else if (y > 300) {
+   y = prevDepth + ((Math.floor(Math.random() * Math.floor(2))) * 50);
+  } else {
+   y = prevDepth + ((Math.floor(Math.random() * Math.floor(3)) - 1) * 50);
+  }
   surface[surface.length] = [x, y];
   new block(x, y, 50, "#179d06");
   prevDepth = y;
