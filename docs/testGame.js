@@ -30,9 +30,16 @@ function collision() {
  }
 }
 // the important stuff
-// function platform(gravity, friction, jumpHeight, moveSpeed) {
- 
-// }
+ function platform(gravity, friction, jumpHeight, moveSpeed) {
+  pYVel += gravity;
+  pY += pYVel;
+  if (touchingWorld == true) {
+   while (touchingWorld == true) {
+    pYVel += (Math.abs(pYVel)/pYVel) * -1;
+   }
+   // pYVel = 
+  }
+ }
 function player() {
  ctx.fillStyle = "#000";
  ctx.fillRect(pX, pY, pLength, pLength);
@@ -58,14 +65,8 @@ function makeWorld() {
  prevDepth = y;
  for (x = -1000; x < 1800; x += 50) {
   depth = 0;
-  // this is for making the terrain go not crazy
- if (y < 50) {
-   y = prevDepth + ((Math.floor(Math.random() * Math.floor(2)) - 1) * 50); 
- } else if (y > 300) {
-   y = prevDepth + ((Math.floor(Math.random() * Math.floor(2))) * 50);
- } else {
-   y = prevDepth + ((Math.floor(Math.random() * Math.floor(3)) - 1) * 50);
- }
+  // this is for SMoothING the terrain
+  y = prevDepth + ((Math.floor(Math.random() * Math.floor(3)) - 1) * 50);
   new block(x, y, 50, "#179d06");
   prevDepth = y;
   world[world.length] = [x, y, "#179d06"];
