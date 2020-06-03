@@ -30,9 +30,9 @@ function collision() {
  }
 }
 // the important stuff
-function platform(gravity, friction, jumpHeight, moveSpeed) {
+// function platform(gravity, friction, jumpHeight, moveSpeed) {
  
-}
+// }
 function player() {
  ctx.fillStyle = "#000";
  ctx.fillRect(pX, pY, pLength, pLength);
