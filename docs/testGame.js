@@ -34,10 +34,7 @@ function collision() {
   pYVel += gravity;
   pY += pYVel;
   if (touchingWorld == true) {
-   while (touchingWorld == true) {
-    pYVel += (Math.abs(pYVel)/pYVel) * -1;
-   }
-    pYVel = 0;
+   pYVel -= 1;
   }
  }
 function player() {
@@ -67,6 +64,7 @@ function makeWorld() {
   depth = 0;
   // this is for SMoothING the terrain
   y = prevDepth + ((Math.floor(Math.random() * Math.floor(3)) - 1) * 50);
+  // for actually generating it
   new block(x, y, 50, "#179d06");
   prevDepth = y;
   world[world.length] = [x, y, "#179d06"];
@@ -111,7 +109,7 @@ function drawWorld() {
   drawingColor = world[i][2];
   new block(drawingX, drawingY, 50, drawingColor);
   collision();
-  platform(-1);
+  // platform(-1);
  }
  pX += pXVel;
  pY += pYVel;
