@@ -16,7 +16,7 @@ var moveDistX = 0;
 var depth;
 var stoneOrDirt;
 var pX = 375;
-var pY = 100;
+var pY = 500;
 var pLength = 50;
 var pYVel = 0;
 var pXVel = 0;
@@ -42,16 +42,17 @@ function collision() {
 // the important stuff
  function platform(gravity) {
   pYVel += gravity;
-  // if (touchingWorld == true) {
-   // pYVel -= 1;
-   // if (key == "UP") {
-    // pYVel = 10;
-   // }
-  // }
+   if (touchingWorld == true) {
+    pYVel = 0;
+    pYVel -= 1;
+   if (key == "UP") {
+    pYVel = -10;
+   }
+  }
  }
 function player() {
  ctx.fillStyle = "#000";
- ctx.fillRect(pX, pY, pLength, pLength);
+ ctx.fillRect(0, 0, pLength, pLength);
 }
 // it's the init function. the name says it all.
 function init() {
