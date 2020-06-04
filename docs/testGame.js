@@ -25,6 +25,8 @@ var key;
 document.addEventListener("keyDown", function(event) {
  if (event.keyCode == 38) {
   key = "UP";
+ } else if (event.keyCode == 39) {
+  alert(world);
  } else {
   key = "none";
  }
@@ -32,9 +34,9 @@ document.addEventListener("keyDown", function(event) {
 // senses if you are touching the world
 function collision() {
  if (pX + 50 > drawingX && pX < drawingX + 50 && drawingY + 50 > pY && drawingY < pY + 50) {
-  touchingWorld = true;
- } else {
   touchingWorld = false;
+ } else {
+  touchingWorld = true;
  }
 }
 // the important stuff
