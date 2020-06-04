@@ -50,7 +50,7 @@ function collision() {
     // pYVel = 10;
    // }
   // }
- // }
+ }
 function player() {
  ctx.fillStyle = "#000";
  ctx.fillRect(pX, pY, pLength, pLength);
