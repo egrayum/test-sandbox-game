@@ -41,15 +41,16 @@ function collision() {
 }
 // the important stuff
  function platform(gravity) {
-  pYVel += gravity;
-  pY += pYVel;
-  if (touchingWorld == true) {
-   pYVel -= 1;
-   if (key == "UP") {
-    pYVel = 10;
-   }
-  }
- }
+  pY += gravity;
+  // pYVel += gravity;
+  // pY += pYVel;
+  // if (touchingWorld == true) {
+   // pYVel -= 1;
+   // if (key == "UP") {
+    // pYVel = 10;
+   // }
+  // }
+ // }
 function player() {
  ctx.fillStyle = "#000";
  ctx.fillRect(pX, pY, pLength, pLength);
