@@ -21,6 +21,14 @@ var pLength = 50;
 var pYVel = 0;
 var pXVel = 0;
 var touchingWorld = false;
+var key;
+document.addEventListener("keyDown", function getKey() {
+ if (keyCode == 38) {
+  key = "UP";
+ } else {
+  key = "none";
+ }
+})
 // senses if you are touching the world
 function collision() {
  if (pX + 50 > drawingX && pX < drawingX + 50 && drawingY + 50 > pY && drawingY < pY + 50) {
@@ -35,6 +43,9 @@ function collision() {
   pY += pYVel;
   if (touchingWorld == true) {
    pYVel -= 1;
+   if (key == "UP") {
+    pYVel = 10;
+   }
   }
  }
 function player() {
@@ -109,7 +120,7 @@ function drawWorld() {
   drawingColor = world[i][2];
   new block(drawingX, drawingY, 50, drawingColor);
   collision();
-  // platform(-1);
+  platform(-1);
  }
  pX += pXVel;
  pY += pYVel;
