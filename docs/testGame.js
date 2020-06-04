@@ -22,8 +22,8 @@ var pYVel = 0;
 var pXVel = 0;
 var touchingWorld = false;
 var key;
-document.addEventListener("keyDown", function getKey() {
- if (keyCode == 38) {
+document.addEventListener("keyDown", function(event) {
+ if (event.keyCode == 38) {
   key = "UP";
  } else {
   key = "none";
@@ -102,18 +102,6 @@ function makeWorld() {
 function drawWorld() {
  ctx.fillStyle = "#05a0fb";
  ctx.fillRect(0, 0, c.width, c.height);
- document.addEventListener("keydown", function(event) {
-  if (event.keyCode == 38 && moveDistY < 1000) {
-   pYVel = -4;
-  } else if (event.keyCode == 40 && moveDistY > -1000) {
-   moveDistY -= 0.18; 
-  }
-  if (event.keyCode == 37 && moveDistX < 1000) {
-   moveDistX += 0.18;
-  } else if (event.keyCode == 39 && moveDistX > -1000) {
-   moveDistX -= 0.18;
-  }
- })
  for (i = 0; i < world.length; i++) {
   drawingX = world[i][0] + pX;
   drawingY = world[i][1] + pY;
