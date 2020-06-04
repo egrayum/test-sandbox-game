@@ -41,9 +41,7 @@ function collision() {
 }
 // the important stuff
  function platform(gravity) {
-  pY += gravity;
-  // pYVel += gravity;
-  // pY += pYVel;
+  pYVel += gravity;
   // if (touchingWorld == true) {
    // pYVel -= 1;
    // if (key == "UP") {
@@ -111,8 +109,8 @@ function drawWorld() {
   drawingColor = world[i][2];
   new block(drawingX, drawingY, 50, drawingColor);
   collision();
-  platform(-1);
  }
+ platform(-1);
  pX += pXVel;
  pY += pYVel;
  player();
