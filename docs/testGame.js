@@ -4,6 +4,7 @@ var i;
 var x;
 var y;
 var world = [];
+var surface = [];
 var randY = [200, 250, 300];
 var prevDepth;
 var moveDistY = 0;
@@ -33,26 +34,23 @@ document.addEventListener("keyDown", function(event) {
 })
 // senses if you are touching the world
 function collision() {
- if (pX + 50 > drawingX && pX < drawingX + 50 && drawingY + 50 > pY && drawingY < pY + 50) {
-  touchingWorld = false;
- } else {
+ if (275 > drawingY && 375 > drawingX - 1 && 375 < drawingX + 51) {
   touchingWorld = true;
+ } else {
+  touchingWorld = false;
  }
 }
 // the important stuff
  function platform(gravity) {
-  pYVel += gravity;
-   if (touchingWorld == true) {
-    pYVel = 0;
-   // pYVel -= 1;
-   if (key == "UP") {
-    pYVel = -10;
-   }
+  if (touchingWorld == false) {
+   pYVel -= 2;  
+  } else {
+   pYVel += 2;
   }
  }
 function player() {
  ctx.fillStyle = "#000";
- ctx.fillRect(0, 0, pLength, pLength);
+ ctx.fillRect(375, 275, pLength, pLength);
 }
 // it's the init function. the name says it all.
 function init() {
@@ -109,8 +107,8 @@ function drawWorld() {
   drawingY = world[i][1] + pY;
   drawingColor = world[i][2];
   new block(drawingX, drawingY, 50, drawingColor);
+  collision();
  }
- collision();
  platform(-1);
  pX += pXVel;
  pY += pYVel;
