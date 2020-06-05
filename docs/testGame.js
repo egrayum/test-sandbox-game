@@ -39,6 +39,7 @@ function collision() {
  } else {
   touchingWorld = false;
  }
+ alert(touchingWorld);
 }
 // the important stuff
  function platform(gravity) {
@@ -62,7 +63,6 @@ function init() {
  ctx.fillStyle = "#05a0fb";
  ctx.fillRect(0, 0, c.width, c.height);
  makeWorld();
- alert("HELLO IS THIS PIECE OF JUNK WORKING");
  window.setInterval(drawWorld, 20);
 }
 // for making new blocks
