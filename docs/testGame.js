@@ -35,11 +35,13 @@ document.addEventListener("keydown", function(event) {
  }
 })
 document.addEventListener("keyup", function(event) {
- key = "none";
+ if (event.keyCode == 37 || event.keyCode == 38 || event.keyCode == 39) {
+  key = "none";
+ }
 })
 // senses if you are touching the world
 function collision() {
- if (275 > drawingY && 375 > drawingX - 1 && 375 < drawingX + 1) {
+ if (275 > drawingY && 375 > drawingX - 1 && 375 < drawingX + 51) {
   touchingWorld = true;
   pYVel = 0;
   pYVel += 0.5;
@@ -69,7 +71,7 @@ function init() {
  ctx.fillStyle = "#05a0fb";
  ctx.fillRect(0, 0, c.width, c.height);
  makeWorld();
- alert("version 0.033");
+ alert("version 0.034");
  window.setInterval(drawWorld, 20);
 }
 // for making new blocks
