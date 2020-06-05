@@ -23,15 +23,18 @@ var pYVel = 0;
 var pXVel = 0;
 var touchingWorld = false;
 var key;
-var Y;
+var Y = 275;
+var X = 375;
 document.addEventListener("keydown", function(event) {
  if (event.keyCode == 38) {
   key = "UP";
   Y = 275;
  } else if (event.keyCode == 39) {
   key = "RIGHT";
+  X = 375;
  } else if (event.keyCode == 37) {
   key = "LEFT";
+  X = 375;
  }
 })
 document.addEventListener("keyup", function(event) {
@@ -39,10 +42,10 @@ document.addEventListener("keyup", function(event) {
 })
 // senses if you are touching the world.. this is also the platforming script.
 function collision() {
- if (275 > drawingY && 375 > drawingX - 51 && 375 < drawingX + 51) {
+ if (Y > drawingY && X > drawingX - 51 && X < drawingX + 51) {
   touchingWorld = true;
   pYVel = 0;
-  pYVel += 0.5;
+  pYVel += 0.8;
   Y = drawingY - 50;
  } else {
   touchingWorld = false;
@@ -60,10 +63,16 @@ function collision() {
  } else if (pXVel < 0) {
   pXVel += 0.004; 
  }
+ if (touchingWorld == true && pXVel < 0) {
+  pXVel += 1;
+ }
+ if (touchingWorld == true && pXVel > 0) {
+  pXVel -= 1;
+ }
 }
 function player() {
  ctx.fillStyle = "#000";
- ctx.fillRect(375, Y, pLength, pLength);
+ ctx.fillRect(X, Y, pLength, pLength);
 }
 // it's the init function. the name says it all.
 function init() {
@@ -72,7 +81,7 @@ function init() {
  ctx.fillStyle = "#05a0fb";
  ctx.fillRect(0, 0, c.width, c.height);
  makeWorld();
- alert("version 0.035");
+ alert("version 0.036");
  window.setInterval(drawWorld, 20);
 }
 // for making new blocks
