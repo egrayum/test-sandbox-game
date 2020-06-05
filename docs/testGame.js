@@ -24,7 +24,8 @@ var pXVel = 0;
 var touchingWorld = false;
 var key;
 document.addEventListener("keyDown", function(event) {
- if (event.keyCode == 38)   key = "UP";
+ if (event.keyCode == 38) {
+  key = "UP";
  } else if (event.keyCode == 39) {
  } else {
   key = "none";
