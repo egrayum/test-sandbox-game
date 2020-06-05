@@ -39,7 +39,7 @@ function collision() {
   pYVel += 0.01;
  } else {
   touchingWorld = false;
-  pYVel -= 0.0004;
+  pYVel -= 0.0001;
  }
 }
 // the important stuff
@@ -57,7 +57,7 @@ function init() {
  ctx.fillStyle = "#05a0fb";
  ctx.fillRect(0, 0, c.width, c.height);
  makeWorld();
- alert("version 0.024");
+ alert("version 0.025");
  window.setInterval(drawWorld, 20);
 }
 // for making new blocks
