@@ -57,7 +57,7 @@ function init() {
  ctx.fillStyle = "#05a0fb";
  ctx.fillRect(0, 0, c.width, c.height);
  makeWorld();
- alert("version 0.02");
+ alert("version 0.021");
  window.setInterval(drawWorld, 20);
 }
 // for making new blocks
