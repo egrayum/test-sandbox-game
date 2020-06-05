@@ -28,6 +28,10 @@ document.addEventListener("keydown", function(event) {
   key = "UP";
  } else if (event.keyCode == 39) {
  } else {
+ }
+})
+document.addEventListener("keyup", function(event) {
+ if (event.keyCode == 38) {
   key = "none";
  }
 })
@@ -42,7 +46,7 @@ function collision() {
   pYVel -= 0.0004;
  }
  if (touchingWorld == true && key == "UP") {
-   pYVel = 3;
+   pYVel = 20;
   }
 }
 function player() {
@@ -56,7 +60,7 @@ function init() {
  ctx.fillStyle = "#05a0fb";
  ctx.fillRect(0, 0, c.width, c.height);
  makeWorld();
- alert("version 0.028");
+ alert("version 0.030");
  window.setInterval(drawWorld, 20);
 }
 // for making new blocks
