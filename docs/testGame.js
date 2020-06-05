@@ -37,7 +37,6 @@ function collision() {
   pYVel = 0;
  } else {
   touchingWorld = false;
-  pYVel -= 0.5;
  }
 }
 // the important stuff
