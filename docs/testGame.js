@@ -39,7 +39,7 @@ document.addEventListener("keyup", function(event) {
 })
 // senses if you are touching the world.. this is also the platforming script.
 function collision() {
- if (275 > drawingY && 375 > drawingX - 1 && 375 < drawingX + 51) {
+ if (275 > drawingY && 375 > drawingX - 51 && 375 < drawingX + 51) {
   touchingWorld = true;
   pYVel = 0;
   pYVel += 0.5;
