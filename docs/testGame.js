@@ -23,11 +23,13 @@ var pYVel = 0;
 var pXVel = 0;
 var touchingWorld = false;
 var key;
+var Y;
 document.addEventListener("keydown", function(event) {
  if (event.keyCode == 38) {
   key = "UP";
+  Y = 375
  } else if (event.keyCode == 39) {
- } else {
+ } else if (event.keyCode == 37) {
  }
 })
 document.addEventListener("keyup", function(event) {
@@ -37,10 +39,11 @@ document.addEventListener("keyup", function(event) {
 })
 // senses if you are touching the world
 function collision() {
- if (275 > drawingY && 425 > drawingX - 1 && 375 < drawingX + 51) {
+ if (275 > drawingY && 325 > drawingX - 1 && 375 < drawingX + 51) {
   touchingWorld = true;
   pYVel = 0;
   pYVel += 0.5;
+  Y = drawingY - 50;
  } else {
   touchingWorld = false;
   pYVel -= 0.0004;
@@ -51,7 +54,7 @@ function collision() {
 }
 function player() {
  ctx.fillStyle = "#000";
- ctx.fillRect(375, 275, pLength, pLength);
+ ctx.fillRect(375, Y, pLength, pLength);
 }
 // it's the init function. the name says it all.
 function init() {
