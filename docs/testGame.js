@@ -36,9 +36,6 @@ document.addEventListener("keyDown", function(event) {
 function collision() {
  if (275 > drawingY && 375 > drawingX - 1 && 375 < drawingX + 51) {
   touchingWorld = true;
-  ctx.fillStyle = "#000";
-  ctx.font = "30px Arial";
-  ctx.fillText("true.", 20, 50);
  } else {
   touchingWorld = false;
  }
@@ -47,7 +44,9 @@ function collision() {
  function platform(gravity) {
   if (touchingWorld == false) {
    pYVel -= 0.5;  
-  } else {
+  } 
+  if (touchingWorld == true) {
+   pYVel = 0;
    pYVel += 0.5;
   }
  }
