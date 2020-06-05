@@ -35,9 +35,7 @@ document.addEventListener("keydown", function(event) {
  }
 })
 document.addEventListener("keyup", function(event) {
- if (event.keyCode == 38) {
-  key = "none";
- }
+ key = "none";
 })
 // senses if you are touching the world
 function collision() {
@@ -71,7 +69,7 @@ function init() {
  ctx.fillStyle = "#05a0fb";
  ctx.fillRect(0, 0, c.width, c.height);
  makeWorld();
- alert("version 0.032");
+ alert("version 0.033");
  window.setInterval(drawWorld, 20);
 }
 // for making new blocks
