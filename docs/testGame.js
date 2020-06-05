@@ -36,10 +36,10 @@ function collision() {
  if (275 > drawingY && 375 > drawingX - 1 && 375 < drawingX + 51) {
   touchingWorld = true;
   pYVel = 0;
-  pYVel += 0.0001;
+  pYVel += 0.0008;
  } else {
   touchingWorld = false;
-  pYVel -= 0.0001;
+  pYVel -= 0.0004;
  }
 }
 // the important stuff
