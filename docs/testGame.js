@@ -26,7 +26,6 @@ var key;
 document.addEventListener("keydown", function(event) {
  if (event.keyCode == 38) {
   key = "UP";
-  alert("hallo");
  } else if (event.keyCode == 39) {
  } else {
   key = "none";
@@ -37,16 +36,15 @@ function collision() {
  if (275 > drawingY && 425 > drawingX - 1 && 375 < drawingX + 51) {
   touchingWorld = true;
   pYVel = 0;
-   pYVel += 0.5;
+  pYVel += 0.5;
  } else {
   touchingWorld = false;
   pYVel -= 0.0004;
  }
+ if (touchingWorld == true && key == "UP") {
+   pYVel = 3;
+  }
 }
-// the important stuff
- /* function platform(gravity) {
-  
- } */
 function player() {
  ctx.fillStyle = "#000";
  ctx.fillRect(375, 275, pLength, pLength);
