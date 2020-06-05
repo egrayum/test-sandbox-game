@@ -27,9 +27,11 @@ var Y;
 document.addEventListener("keydown", function(event) {
  if (event.keyCode == 38) {
   key = "UP";
-  Y = 375
+  Y = 275;
  } else if (event.keyCode == 39) {
+  key = "RIGHT";
  } else if (event.keyCode == 37) {
+  key = "LEFT";
  }
 })
 document.addEventListener("keyup", function(event) {
@@ -39,7 +41,7 @@ document.addEventListener("keyup", function(event) {
 })
 // senses if you are touching the world
 function collision() {
- if (275 > drawingY && 325 > drawingX - 1 && 375 < drawingX + 51) {
+ if (275 > drawingY && 375 > drawingX - 1 && 375 < drawingX + 1) {
   touchingWorld = true;
   pYVel = 0;
   pYVel += 0.5;
@@ -49,8 +51,14 @@ function collision() {
   pYVel -= 0.0004;
  }
  if (touchingWorld == true && key == "UP") {
-   pYVel = 20;
-  }
+  pYVel = 20;
+ }
+ if (key == "LEFT") {
+  pXVel = 5; 
+ }
+ if (key == "RIGHT") {
+  pXVel = -5;
+ }
 }
 function player() {
  ctx.fillStyle = "#000";
@@ -63,7 +71,7 @@ function init() {
  ctx.fillStyle = "#05a0fb";
  ctx.fillRect(0, 0, c.width, c.height);
  makeWorld();
- alert("version 0.031");
+ alert("version 0.032");
  window.setInterval(drawWorld, 20);
 }
 // for making new blocks
