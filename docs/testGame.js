@@ -36,7 +36,7 @@ function collision() {
  if (275 > drawingY && 375 > drawingX - 1 && 375 < drawingX + 51) {
   touchingWorld = true;
   pYVel = 0;
-  // pYVel += 0.01;
+   pYVel += 1;
  } else {
   touchingWorld = false;
   pYVel -= 0.0004;
@@ -57,7 +57,7 @@ function init() {
  ctx.fillStyle = "#05a0fb";
  ctx.fillRect(0, 0, c.width, c.height);
  makeWorld();
- alert("version 0.026");
+ alert("version 0.027");
  window.setInterval(drawWorld, 20);
 }
 // for making new blocks
