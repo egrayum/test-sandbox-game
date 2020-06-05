@@ -42,15 +42,14 @@ function collision() {
 }
 // the important stuff
  function platform(gravity) {
-  if (touchingWorld == false) {
-   pYVel -= 0.5;  
-   alert("true.");
-  } 
   if (touchingWorld == true) {
    alert("true.");
    pYVel = 0;
    pYVel += 0.5;
   }
+  if (touchingWorld == false) {
+   pYVel -= 0.5;  
+  } 
  }
 function player() {
  ctx.fillStyle = "#000";
