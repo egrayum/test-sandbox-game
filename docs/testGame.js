@@ -23,7 +23,7 @@ var pYVel = 0;
 var pXVel = 0;
 var touchingWorld = false;
 var key;
-var Y = 275;
+var Y;
 var X = 375;
 document.addEventListener("keydown", function(event) {
  if (event.keyCode == 38) {
@@ -81,7 +81,7 @@ function init() {
  ctx.fillStyle = "#05a0fb";
  ctx.fillRect(0, 0, c.width, c.height);
  makeWorld();
- alert("version 0.036");
+ alert("version 0.037");
  window.setInterval(drawWorld, 20);
 }
 // for making new blocks
