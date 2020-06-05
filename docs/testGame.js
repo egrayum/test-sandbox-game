@@ -41,9 +41,9 @@ function collision() {
  }
 }
 // the important stuff
- function platform(gravity) {
+ /* function platform(gravity) {
   
- } 
+ } */
 function player() {
  ctx.fillStyle = "#000";
  ctx.fillRect(375, 275, pLength, pLength);
