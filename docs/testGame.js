@@ -35,11 +35,9 @@ document.addEventListener("keydown", function(event) {
  }
 })
 document.addEventListener("keyup", function(event) {
- if (event.keyCode == 37 || event.keyCode == 38 || event.keyCode == 39) {
-  key = "none";
- }
+ key = "none";
 })
-// senses if you are touching the world
+// senses if you are touching the world.. this is also the platforming script.
 function collision() {
  if (275 > drawingY && 375 > drawingX - 1 && 375 < drawingX + 51) {
   touchingWorld = true;
@@ -55,9 +53,12 @@ function collision() {
  }
  if (key == "LEFT") {
   pXVel = 5; 
- }
- if (key == "RIGHT") {
+ } else if (key == "RIGHT") {
   pXVel = -5;
+ } else if (pXVel > 0) {
+  pXVel -= 0.004;
+ } else if (pXVel < 0) {
+  pXVel += 0.004; 
  }
 }
 function player() {
@@ -71,7 +72,7 @@ function init() {
  ctx.fillStyle = "#05a0fb";
  ctx.fillRect(0, 0, c.width, c.height);
  makeWorld();
- alert("version 0.034");
+ alert("version 0.035");
  window.setInterval(drawWorld, 20);
 }
 // for making new blocks
