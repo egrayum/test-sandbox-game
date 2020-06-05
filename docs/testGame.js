@@ -26,6 +26,7 @@ var key;
 document.addEventListener("keyDown", function(event) {
  if (event.keyCode == 38) {
   key = "UP";
+  alert("up");
  } else if (event.keyCode == 39) {
  } else {
   key = "none";
