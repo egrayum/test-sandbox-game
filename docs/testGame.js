@@ -31,10 +31,8 @@ document.addEventListener("keydown", function(event) {
   Y = 275;
  } else if (event.keyCode == 39) {
   key = "RIGHT";
-  X = 375;
  } else if (event.keyCode == 37) {
   key = "LEFT";
-  X = 375;
  }
 })
 document.addEventListener("keyup", function(event) {
@@ -45,7 +43,7 @@ function collision() {
  if (Y > drawingY && X > drawingX - 51 && X < drawingX + 51) {
   touchingWorld = true;
   pYVel = 0;
-  pYVel += 0.8;
+  pYVel += 0.5;
   Y = drawingY - 50;
  } else {
   touchingWorld = false;
@@ -81,7 +79,7 @@ function init() {
  ctx.fillStyle = "#05a0fb";
  ctx.fillRect(0, 0, c.width, c.height);
  makeWorld();
- alert("version 0.038");
+ alert("version 0.039");
  window.setInterval(drawWorld, 20);
 }
 // for making new blocks
