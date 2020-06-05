@@ -42,7 +42,7 @@ function collision() {
 // the important stuff
  function platform(gravity) {
   if (touchingWorld == true) {
-   alert("true.");
+   alert("terraria");
    pYVel = 0;
    pYVel += 1;
   }
