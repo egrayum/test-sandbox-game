@@ -46,6 +46,7 @@ function collision() {
    pYVel -= 0.5;  
   } 
   if (touchingWorld == true) {
+   alert("true.");
    pYVel = 0;
    pYVel += 0.5;
   }
