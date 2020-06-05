@@ -40,7 +40,7 @@ function collision() {
  }
 }
 // the important stuff
- function platform(gravity) {
+/* function platform(gravity) {
   if (touchingWorld == true) {
    alert("terraria");
    pYVel = 0;
@@ -49,7 +49,7 @@ function collision() {
   if (touchingWorld == false) {
    pYVel -= 0.5;  
   } 
- }
+ } */
 function player() {
  ctx.fillStyle = "#000";
  ctx.fillRect(375, 275, pLength, pLength);
@@ -61,6 +61,7 @@ function init() {
  ctx.fillStyle = "#05a0fb";
  ctx.fillRect(0, 0, c.width, c.height);
  makeWorld();
+ alert("whallo");
  window.setInterval(drawWorld, 20);
 }
 // for making new blocks
@@ -111,7 +112,15 @@ function drawWorld() {
   new block(drawingX, drawingY, 50, drawingColor);
   collision();
  }
- platform(-1);
+ // platform(-1);
+ if (touchingWorld == true) {
+   alert("terraria");
+   pYVel = 0;
+   pYVel += 1;
+  }
+  if (touchingWorld == false) {
+   pYVel -= 0.5;  
+  } 
  pX += pXVel;
  pY += pYVel;
  player();
