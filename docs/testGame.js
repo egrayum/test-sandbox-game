@@ -26,7 +26,7 @@ document.addEventListener("keyDown", function(event) {
  if (event.keyCode == 38) {
   key = "UP";
  } else if (event.keyCode == 39) {
-  alert(world);
+  alert("world");
  } else {
   key = "none";
  }
@@ -44,7 +44,7 @@ function collision() {
   pYVel += gravity;
    if (touchingWorld == true) {
     pYVel = 0;
-    pYVel -= 1;
+   // pYVel -= 1;
    if (key == "UP") {
     pYVel = -10;
    }
@@ -109,8 +109,8 @@ function drawWorld() {
   drawingY = world[i][1] + pY;
   drawingColor = world[i][2];
   new block(drawingX, drawingY, 50, drawingColor);
-  collision();
  }
+ collision();
  platform(-1);
  pX += pXVel;
  pY += pYVel;
