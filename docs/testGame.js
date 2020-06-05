@@ -23,10 +23,10 @@ var pYVel = 0;
 var pXVel = 0;
 var touchingWorld = false;
 var key;
-document.addEventListener("keyDown", function(event) {
+document.addEventListener("keyDown", function(event) = {
  if (event.keyCode == 38) {
   key = "UP";
-  alert("up");
+  alert("hallo");
  } else if (event.keyCode == 39) {
  } else {
   key = "none";
