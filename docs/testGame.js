@@ -36,10 +36,10 @@ document.addEventListener("keyDown", function(event) {
 function collision() {
  if (275 > drawingY && 375 > drawingX - 1 && 375 < drawingX + 51) {
   touchingWorld = true;
+  alert(touchingWorld);
  } else {
   touchingWorld = false;
  }
- alert(touchingWorld);
 }
 // the important stuff
  function platform(gravity) {
