@@ -34,16 +34,11 @@ document.addEventListener("keyDown", function(event) {
 function collision() {
  if (275 > drawingY && 375 > drawingX - 1 && 375 < drawingX + 51) {
   touchingWorld = true;
+  pYVel = 0;
  } else {
   touchingWorld = false;
+  pYVel -= 0.5;
  }
- if (touchingWorld == true) {
-  pYVel = 0;
-  pYVel += 1;
- }
- if (touchingWorld == false) {
-  pYVel -= 0.5;  
- } 
 }
 // the important stuff
  function platform(gravity) {
