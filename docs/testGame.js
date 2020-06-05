@@ -33,10 +33,10 @@ document.addEventListener("keyDown", function(event) {
 })
 // senses if you are touching the world
 function collision() {
- if (275 > drawingY && 375 > drawingX - 1 && 375 < drawingX + 51) {
+ if (275 > drawingY && 425 > drawingX - 1 && 375 < drawingX + 51) {
   touchingWorld = true;
   pYVel = 0;
-   pYVel += 1;
+   pYVel += 0.5;
  } else {
   touchingWorld = false;
   pYVel -= 0.0004;
@@ -57,7 +57,7 @@ function init() {
  ctx.fillStyle = "#05a0fb";
  ctx.fillRect(0, 0, c.width, c.height);
  makeWorld();
- alert("version 0.027");
+ alert("version 0.028");
  window.setInterval(drawWorld, 20);
 }
 // for making new blocks
