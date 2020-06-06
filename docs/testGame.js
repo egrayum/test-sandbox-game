@@ -42,7 +42,7 @@ document.addEventListener("keyup", function(event) {
 function collision() {
  if (Y + 50 > drawingY && X > drawingX - 51 && X < drawingX + 51) {
   touchingWorld = true;
-  if (pYVel < -1.5) {
+  if (pYVel < -3) {
    pYVel = 0;
   }
   pYVel += 0.5;
