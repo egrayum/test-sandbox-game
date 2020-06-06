@@ -42,7 +42,9 @@ document.addEventListener("keyup", function(event) {
 function collision() {
  if (Y + 50 > drawingY && X > drawingX - 51 && X < drawingX + 51) {
   touchingWorld = true;
-  pYVel = 0;
+  if (pYVel < -1.5) {
+   pYVel = 0;
+  }
   pYVel += 0.5;
   Y = drawingY - 50;
  } else {
@@ -79,7 +81,7 @@ function init() {
  ctx.fillStyle = "#05a0fb";
  ctx.fillRect(0, 0, c.width, c.height);
  makeWorld();
- alert("version 0.041");
+ alert("version 0.042");
  window.setInterval(drawWorld, 20);
 }
 // for making new blocks
