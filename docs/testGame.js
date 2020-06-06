@@ -61,12 +61,12 @@ function collision() {
  } else if (pXVel < 0) {
   pXVel += 0.004; 
  }
- /* if (touchingWorld == true && pXVel < 0) {
+ if (touchingWorld == true && pXVel < 0) {
   pXVel += 1;
  }
  if (touchingWorld == true && pXVel > 0) {
   pXVel -= 1;
- } */
+ } 
 }
 function player() {
  ctx.fillStyle = "#000";
@@ -79,7 +79,7 @@ function init() {
  ctx.fillStyle = "#05a0fb";
  ctx.fillRect(0, 0, c.width, c.height);
  makeWorld();
- alert("version 0.040");
+ alert("version 0.041");
  window.setInterval(drawWorld, 20);
 }
 // for making new blocks
